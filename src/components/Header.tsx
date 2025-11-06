@@ -64,7 +64,7 @@ const Header: React.FC = () => {
         </div>
 
         {/* Desktop Navigation - Right */}
-        <nav style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '2rem' }} className="desktop-nav">
+        <nav style={{ marginLeft: '60%', display: 'flex', alignItems: 'center', gap: '2rem' }} className="desktop-nav">
           <ul style={{
             listStyle: 'none',
             display: 'flex',
