@@ -93,27 +93,30 @@ const Home: React.FC = () => {
                 });
               }}
               style={{
-                background: '#6b8e9e',
+                background: 'rgba(255, 255, 255, 0.15)',
                 color: '#ffffff',
                 fontSize: '1rem',
                 fontWeight: '400',
                 padding: '1rem 2.5rem',
                 borderRadius: '6px',
-                border: 'none',
+                border: '2px solid rgba(255, 255, 255, 0.5)',
                 cursor: 'pointer',
                 transition: 'all 0.3s ease',
                 letterSpacing: '0.5px',
-                boxShadow: '0 4px 12px rgba(0,0,0,0.2)'
+                backdropFilter: 'blur(5px)',
+                boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = '#5a7d8d';
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.25)';
+                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.8)';
                 e.currentTarget.style.transform = 'translateY(-2px)';
-                e.currentTarget.style.boxShadow = '0 6px 16px rgba(0,0,0,0.3)';
+                e.currentTarget.style.boxShadow = '0 6px 16px rgba(0,0,0,0.2)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.background = '#6b8e9e';
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)';
+                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.5)';
                 e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)';
+                e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
               }}
             >
               Contact
