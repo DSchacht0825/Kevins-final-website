@@ -86,8 +86,12 @@ const Home: React.FC = () => {
             alignItems: 'center',
             flexWrap: 'wrap'
           }}>
-            <a
-              href="sms:323-844-1016"
+            <button
+              onClick={() => {
+                document.querySelector('footer')?.scrollIntoView({
+                  behavior: 'smooth'
+                });
+              }}
               style={{
                 background: '#6b8e9e',
                 color: '#ffffff',
@@ -99,9 +103,7 @@ const Home: React.FC = () => {
                 cursor: 'pointer',
                 transition: 'all 0.3s ease',
                 letterSpacing: '0.5px',
-                boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
-                textDecoration: 'none',
-                display: 'inline-block'
+                boxShadow: '0 4px 12px rgba(0,0,0,0.2)'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = '#5a7d8d';
@@ -114,8 +116,8 @@ const Home: React.FC = () => {
                 e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)';
               }}
             >
-              Get in Touch
-            </a>
+              Contact
+            </button>
 
             <button
               onClick={() => {
