@@ -159,35 +159,24 @@ const Header: React.FC = () => {
             </li>
           </ul>
 
-          {/* Book Now Button */}
           <a
             href="https://care.headway.co/providers/kevin-thomas-2"
             target="_blank"
             rel="noopener noreferrer"
             style={{
-              background: '#6b8e9e',
               color: '#ffffff',
-              fontSize: '0.95rem',
-              fontWeight: '500',
-              padding: '0.75rem 1.75rem',
-              borderRadius: '6px',
-              border: 'none',
-              cursor: 'pointer',
-              transition: 'all 0.3s ease',
-              letterSpacing: '0.5px',
               textDecoration: 'none',
-              display: 'inline-block',
-              boxShadow: '0 2px 8px rgba(0,0,0,0.15)'
+              fontSize: '1rem',
+              fontWeight: 400,
+              transition: 'all 0.3s ease',
+              opacity: 0.85,
+              cursor: 'pointer'
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = '#5a7d8d';
-              e.currentTarget.style.transform = 'translateY(-2px)';
-              e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.25)';
+              e.currentTarget.style.opacity = '1';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = '#6b8e9e';
-              e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.15)';
+              e.currentTarget.style.opacity = '0.85';
             }}
           >
             Book Now
