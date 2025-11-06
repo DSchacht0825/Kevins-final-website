@@ -141,6 +141,7 @@ const Footer: React.FC = () => {
               name="contact"
               method="POST"
               data-netlify="true"
+              data-netlify-honeypot="bot-field"
               onSubmit={handleSubmit}
               style={{
                 display: 'flex',
@@ -149,6 +150,7 @@ const Footer: React.FC = () => {
               }}
             >
               <input type="hidden" name="form-name" value="contact" />
+              <input type="hidden" name="bot-field" />
               <div style={{
                 display: 'grid',
                 gridTemplateColumns: '1fr',
