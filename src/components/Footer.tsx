@@ -17,23 +17,37 @@ const Footer: React.FC = () => {
     });
   };
 
+  const encode = (data: { [key: string]: string }) => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
     // Prevent multiple submissions
     if (isSubmitting || isSubmitted) {
-      e.preventDefault();
       return;
     }
 
     setIsSubmitting(true);
-    setIsSubmitted(true);
 
-    // Let Netlify handle the form submission natively
-    // After 3 seconds, reset the form
-    setTimeout(() => {
-      setFormData({ name: '', email: '', phone: '', message: '' });
-      setIsSubmitting(false);
-      alert('Thank you! Your message has been sent successfully.');
-    }, 3000);
+    // Submit to Netlify
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...formData })
+    })
+      .then(() => {
+        setIsSubmitted(true);
+        setFormData({ name: '', email: '', phone: '', message: '' });
+        alert('Thank you! Your message has been sent successfully.');
+      })
+      .catch(error => {
+        alert('Something went wrong. Please try again.');
+        setIsSubmitting(false);
+      });
   };
 
   return (
@@ -139,9 +153,6 @@ const Footer: React.FC = () => {
 
             <form
               name="contact"
-              method="POST"
-              data-netlify="true"
-              data-netlify-honeypot="bot-field"
               onSubmit={handleSubmit}
               style={{
                 display: 'flex',
