@@ -75,34 +75,6 @@ const Header: React.FC = () => {
           }}>
             <li>
               <a
-                href="#approach"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection('approach');
-                }}
-                style={{
-                  color: '#ffffff',
-                  textDecoration: 'none',
-                  fontSize: '1rem',
-                  fontWeight: activeSection === 'approach' ? 500 : 400,
-                  transition: 'all 0.3s ease',
-                  opacity: activeSection === 'approach' ? 1 : 0.85,
-                  cursor: 'pointer'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.opacity = '1';
-                }}
-                onMouseLeave={(e) => {
-                  if (activeSection !== 'approach') {
-                    e.currentTarget.style.opacity = '0.85';
-                  }
-                }}
-              >
-                My Approach
-              </a>
-            </li>
-            <li>
-              <a
                 href="#faqs"
                 onClick={(e) => {
                   e.preventDefault();
@@ -131,13 +103,9 @@ const Header: React.FC = () => {
             </li>
             <li>
               <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.querySelector('footer')?.scrollIntoView({
-                    behavior: 'smooth'
-                  });
-                }}
+                href="https://care.headway.co/providers/kevin-thomas-2"
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{
                   color: '#ffffff',
                   textDecoration: 'none',
@@ -154,33 +122,10 @@ const Header: React.FC = () => {
                   e.currentTarget.style.opacity = '0.85';
                 }}
               >
-                Contact
+                Book Now
               </a>
             </li>
           </ul>
-
-          <a
-            href="https://care.headway.co/providers/kevin-thomas-2"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              color: '#ffffff',
-              textDecoration: 'none',
-              fontSize: '1rem',
-              fontWeight: 400,
-              transition: 'all 0.3s ease',
-              opacity: 0.85,
-              cursor: 'pointer'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.opacity = '1';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.opacity = '0.85';
-            }}
-          >
-            Book Now
-          </a>
         </nav>
 
       </div>
