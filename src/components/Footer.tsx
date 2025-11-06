@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
       .then(() => {
         setIsSubmitted(true);
         setFormData({ name: '', email: '', phone: '', message: '' });
-        alert('Thank you for reaching out. Your message has been received, and I look forward to connecting with you soon. Taking this first step toward healing and growth is meaningful, and I\'m honored you\'re considering this journey together.');
+        alert('Thank you for reaching out. Your message has been received, and I look forward to connecting with you soon.');
       })
       .catch(error => {
         alert('Something went wrong. Please try again.');
